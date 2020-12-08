@@ -1,0 +1,18 @@
+@import './Base.scss';
+
+body{
+  padding: 0;
+  margin: 0;
+  font-family: comic;
+}
+#root{
+  padding: 0;
+  margin: 0;
+}
+.custHref{
+  color:#427d9b !important;
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline !important;
+  }
+}

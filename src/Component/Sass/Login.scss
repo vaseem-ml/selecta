@@ -1,0 +1,10 @@
+@import './Base.scss';
+
+.lgW{
+  height: 80vh;
+  @include vhcenter;
+}
+.lgWC{
+  height: 80vh;
+  @include vhcenter;
+}

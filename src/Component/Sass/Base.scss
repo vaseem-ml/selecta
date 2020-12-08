@@ -1,0 +1,50 @@
+
+$headerColor: #000000;
+$siteTextColor: #acbfc1;
+
+@mixin pmzero {
+  padding: 0;
+  margin: 0;
+}
+
+@mixin vhcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin hcenter {
+  display: flex;
+  justify-content: center;
+}
+@mixin vcenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin circle($widthPassed, $heightPassed){
+  overflow: hidden;
+  border-radius: 50%;
+  width: $widthPassed;
+  height: $heightPassed;
+}
+
+@mixin whfull{
+  width: 100%;
+  height: 100%;
+}
+
+@mixin textEllipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin dotdotdot($widthCustom, $heightCustom, $bgColor){
+  width: $widthCustom;
+  height: $heightCustom;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: $bgColor;
+  margin:0 0.2em 0 .2em;
+  display: inline-table;
+}

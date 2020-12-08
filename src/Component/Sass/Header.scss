@@ -1,0 +1,67 @@
+@import './Base.scss';
+
+.headerDiv{
+  color:$headerColor;
+  width: 100vw;
+  height: 7vh;
+  border-bottom: 2px dashed #bdbdbd;
+  display: block;
+  overflow: hidden;
+}
+.selLeft{
+  display: flex;
+  width: fit-content;
+  height: 100%;
+  align-items: center;
+  float: left;
+  .selectaLogo{
+    width: fit-content;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-left: 1em;
+  }
+  .currentTitle{
+    padding-left: .5em;
+    font-size: 1.5em;
+    font-weight: bold;
+    @include vcenter;
+    height: 100%;
+  }
+}
+.selRight{
+  width: fit-content;
+  @include vcenter;
+  height: 100%;
+  float: right;
+  padding-right: 1em;
+}
+.hUL{
+  list-style: none;
+  margin: 0;
+  padding:0;
+  display: flex;
+  li{
+    padding:0 .5em 0 .5em;
+    color:#46bce2;
+    transition: all .3s linear;
+    border-right: 1px solid #b9b9b9;
+    &:hover{
+      color:#2a728a;
+      cursor: pointer;
+    }
+  }
+}
+.menuSvg{
+  display: none;
+  margin-right: .5em;
+}
+.firstH{
+  height: 100%;
+  @include vcenter
+}
+@media screen and (max-width:768px){
+  .menuSvg{
+    display: block;
+  }
+}

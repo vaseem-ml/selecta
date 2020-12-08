@@ -1,0 +1,49 @@
+@import './Base.scss';
+
+.menuSec{
+  width: 15vw;
+  height: 93vh;
+  border-right: 1px dashed #4e4c4c;
+}
+.menuSec{
+  ul{
+    margin: 0;
+    padding:0;
+    list-style: none;
+    overflow: hidden;
+    li{
+      padding:.5em .5em .5em 1.5em;
+      text-align: center;
+      text-transform: capitalize;
+      border-top:1px dashed #4e4c4c;
+      border-bottom: 1px dashed #4e4c4c;
+      transition: all .3s linear;
+      &:hover{
+        cursor: pointer;
+        background-color: rgba(0,0,0,.2);
+      }
+    }
+  }
+}
+.menuSecR{
+  width: 50vw !important;
+  height: 93vh !important;
+  position: fixed;
+  background-color: turquoise;
+  top:7vh;
+  left:0;
+}
+.triggerSec{
+  width: 85vw;
+  height: 93vh;
+}
+
+@media screen and (max-width:768px){
+  .menuSec{
+    width: 0;
+    height: 0;
+  }
+  .triggerSec{
+    width: 100vw;
+  }
+}
