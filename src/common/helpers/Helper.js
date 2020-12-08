@@ -1,7 +1,7 @@
 //import { toast } from 'react-toastify';
 import axios from 'axios';
 
-const base_url = "http://localhost:3002";
+const base_url = "http://localhost:3001";
 
 var helper = {
     /*toaster: async (message, type="error" ,) => {

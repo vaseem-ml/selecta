@@ -26,7 +26,7 @@ const Data = () => {
     formData.append('file', file);
 
     //const fr = await Helper.post_formdata(formData, path);
-
+    var progressBar:any = document.getElementById('progressBar') as any;
     Axios({
       headers: {
         "Content-Type": "multipart/form-data",
@@ -38,8 +38,9 @@ const Data = () => {
         const { total, loaded } = progress;
         const totalSizeInMB = total / 1000000;
         const loadedSizeInMB = loaded / 1000000;
-        const uploadPercentage = (loadedSizeInMB / totalSizeInMB) * 100;
+        const uploadPercentage:number = (loadedSizeInMB / totalSizeInMB) * 100;
         console.log('this is progress', uploadPercentage);
+        progressBar.value = Math.floor(uploadPercentage) ;
       }
     })
   }
@@ -89,6 +90,9 @@ const Data = () => {
               <div className="custom-file customFile">
                 <input type="file" onChange={fileChange} className="custom-file-input" id="customFile" />
                 <label className="custom-file-label border" htmlFor="customFile">File Upload</label>
+              </div>
+              <div className="col-12 pt-2 d-flex justify-content-center">
+                <progress value={23} id="progressBar" max={100}></progress>
               </div>
               <div className="col-12 pt-2 d-flex justify-content-center">
                 <button className="btn btn-outline-dark px-3">I' m Ready</button>

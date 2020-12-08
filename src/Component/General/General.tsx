@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import Chart from "react-apexcharts";
 import MapChart from '../MapChart/MapChart';
-import {
-  ComposableMap,
-  Geographies,
-  Geography,
-  Marker
-} from "react-simple-maps"
+
 const General: React.FC = () => {
 
   const [chartOption, setChartOption] = useState({
@@ -48,7 +43,7 @@ const General: React.FC = () => {
   return (
     <>
       <div className="col-12 p-3 overflow-hidden">
-        <div className="col-xl-6 col-lg-6 col-md-6 col-12 p-2 float-left ">
+        <div className="col-xl-6 col-lg-6 col-md-6 col-12 p-0 float-left ">
           <div className="genH border">
             <div className="custHeading">
               <span>General Data</span>
@@ -73,7 +68,7 @@ const General: React.FC = () => {
             />
           </div>
         </div>
-        <div className="col-xl-6 col-lg-6 col-md-6 col-12 p-2 float-left">
+        <div className="col-xl-6 col-lg-6 col-md-6 col-12 p-0 float-left">
           <div className="genH border">
             {<MapChart />}
           </div>
