@@ -42,6 +42,7 @@ const General: React.FC = () => {
 
   return (
     <>
+      <div className=""></div>
       <div className="col-12 p-3 overflow-hidden">
         <div className="col-xl-6 col-lg-6 col-md-6 col-12 p-0 float-left ">
           <div className="genH border">
