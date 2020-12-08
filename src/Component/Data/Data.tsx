@@ -92,7 +92,7 @@ const Data = () => {
                 <label className="custom-file-label border" htmlFor="customFile">File Upload</label>
               </div>
               <div className="col-12 pt-2 d-flex justify-content-center">
-                <progress value={23} id="progressBar" max={100}></progress>
+                <progress value={0} id="progressBar" max={100}></progress>
               </div>
               <div className="col-12 pt-2 d-flex justify-content-center">
                 <button className="btn btn-outline-dark px-3">I' m Ready</button>

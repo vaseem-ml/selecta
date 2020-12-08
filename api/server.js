@@ -37,7 +37,7 @@ app.use('/api/v1/admin/data', data);
 
 
 
-const port = parseInt(process.env.PORT, 10) || 3002;
+const port = parseInt(process.env.PORT, 10) || 3001;
 app.set('port', port);
 
 server.listen(port, function() {
