@@ -3,12 +3,12 @@ const Sequelize = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
     const logins = sequelize.define('logins', {
-        user_id: {
+        id: {
             type:DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        user_name: DataTypes.STRING,
+        username: DataTypes.STRING, 
         password: DataTypes.STRING
     }, {
         timestamps: false
