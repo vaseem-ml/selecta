@@ -8,7 +8,6 @@ export const validateLoginSuccess = (validateLoginSuccessData: any) => ({
 
 export function validateLogin(dataToValidate: any) {
   return (dispatch: any) => {
-
     const fr = Helper.post(dataToValidate, apiPath.login);
     fr.then(
       res => res.response.json()
@@ -19,7 +18,6 @@ export function validateLogin(dataToValidate: any) {
       }else{
         alert('Wrong Credential');
       }
-      
     });
   }
 }

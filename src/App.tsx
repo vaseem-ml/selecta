@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Router>
       <Selecta />
-    </Router> 
+    </Router>
   );
 }
 

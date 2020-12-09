@@ -54,14 +54,14 @@ const General: React.FC = () => {
         chartCount.push(newCount);
       }
     }
-/*
+
     console.log('this is daate', montsWithYear);
     console.log('this is chart count', chartCount);
     setSerieas([{
       name:"desktop",
       data: chartCount
     }])
-*/
+
 
     ///chart option
     setChartOption({
@@ -127,7 +127,7 @@ const General: React.FC = () => {
     },
   });
 
-  const [series, setSerieas] = useState([{
+  const [series, setSerieas] = useState<any>([{
     name: "Desktops",
     data: []
   }]);
@@ -155,7 +155,6 @@ const General: React.FC = () => {
             </div>
           </div>
           <div className="genH border genHH">
-            <BubbleChart />
           </div>
         </div>
         <div className="col-xl-6 col-lg-6 col-md-6 col-12 p-0 float-left">

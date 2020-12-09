@@ -8,10 +8,9 @@ import {
 const MapChart = () => {
 
   const geoUrl = "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
-  
+
   return (
     <>
-
       <ComposableMap>
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
@@ -19,7 +18,6 @@ const MapChart = () => {
           }
         </Geographies>
       </ComposableMap>
-
     </>
   );
 }
