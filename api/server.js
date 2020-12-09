@@ -27,11 +27,13 @@ models.sequelize.sync().then(() => {
 });
 
 const data = require('./routes/data.routes');
+const login = require('./routes/login.routes');
 
 
 
 
 app.use('/api/v1/admin/data', data);
+app.use('/api/v1/admin/login', login);
 
 
 

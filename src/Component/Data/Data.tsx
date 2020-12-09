@@ -1,18 +1,12 @@
-import React, { useRef } from 'react';
-import { Table } from 'react-bootstrap';
+import React, { useEffect, useRef, useState } from 'react';
 import Axios from "axios";
-import Helper from '../../common/helpers/Helper';
 import apiPath from '../../common/helpers/apiPath';
-import {
-  ComposableMap,
-  Geographies,
-  Geography,
-  Marker 
-} from "react-simple-maps"
+
+import {ProgressBar} from 'react-bootstrap';
 
 const Data = () => {
   const refTagFile: any = useRef(null);
-
+  const [progressValue, setprogressValue] = useState<number>(0);
   function fileChange(e: any) {
     refTagFile.current = e.target.files[0];
     console.log(refTagFile.current);
@@ -26,23 +20,22 @@ const Data = () => {
     formData.append('file', file);
 
     //const fr = await Helper.post_formdata(formData, path);
-    var progressBar:any = document.getElementById('progressBar') as any;
     Axios({
       headers: {
         "Content-Type": "multipart/form-data",
       },
       method: "POST",
-      data:formData,
-      url: "http://localhost:3001"+apiPath.uploadSocialMediaFile,
+      data: formData,
+      url: "http://localhost:3001" + apiPath.uploadSocialMediaFile,
       onUploadProgress: progress => {
         const { total, loaded } = progress;
         const totalSizeInMB = total / 1000000;
         const loadedSizeInMB = loaded / 1000000;
-        const uploadPercentage:number = (loadedSizeInMB / totalSizeInMB) * 100;
-        console.log('this is progress', uploadPercentage);
-        progressBar.value = Math.floor(uploadPercentage) ;
+        const uploadPercentage: number = (loadedSizeInMB / totalSizeInMB) * 100;
+        setprogressValue( Math.floor(uploadPercentage) );
       }
-    })
+    });
+
   }
 
   return (
@@ -59,29 +52,23 @@ const Data = () => {
             <thead>
               <tr>
                 <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
+                <th>Name</th>
+                <th>From</th>
+                <th>Size</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>samAnderson5450</td>
+                <td>Facebook</td>
+                <td>1.3gb</td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td >Larry the Bird</td>
-                <td>@twitter</td>
-                <td>@fat</td>
+                <td >mydata.snapchat</td>
+                <td>Snapchat</td>
+                <td>0.32gb</td>
               </tr>
             </tbody>
           </table>
@@ -92,10 +79,10 @@ const Data = () => {
                 <label className="custom-file-label border" htmlFor="customFile">File Upload</label>
               </div>
               <div className="col-12 pt-2 d-flex justify-content-center">
-                <progress value={0} id="progressBar" max={100}></progress>
+                <ProgressBar animated now={progressValue} label={progressValue} className="col-12 p-0"/>
               </div>
-              <div className="col-12 pt-2 d-flex justify-content-center">
-                <button className="btn btn-outline-dark px-3">I' m Ready</button>
+              <div className="col-12 pt-2 d-flex justify-content-center ">
+                <button className={`btn btn-outline-dark px-3 ${progressValue === 100 ? "btn-success" : ""}`}>I' m Ready</button>
               </div>
             </div>
           </div>

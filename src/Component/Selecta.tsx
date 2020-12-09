@@ -14,6 +14,7 @@ import Data from './Data/Data';
 import Statistics from './Statistics/Statistics';
 import Targeting from './Targeting/Targeting';
 import General from './General/General';
+import {PrivateRoute} from '../common/components/PrivateRoute';
 const Selecta = () => {
   return (
     <>
@@ -26,12 +27,14 @@ const Selecta = () => {
           <div className="content">
             <div className="container-fluid">
               <Switch>
-                <Route exact path="/" render={() => <General />} />
-                <Route exact path="/data" render={() => <Data />} />
-                <Route exact path="/statistics" render={() => <Statistics />} />
-                <Route exact path="/targetting" render={() => <Targeting />} />
-                <Route exact path="/brokering" render={() => <Brokering />} />
-                <Route exact path="/compare" render={() => <Compare />} />
+                <PrivateRoute path='/'>
+                  <Route exact path="/" render={() => <General />} />
+                  <Route exact path="/data" render={() => <Data />} />
+                  <Route exact path="/statistics" render={() => <Statistics />} />
+                  <Route exact path="/targetting" render={() => <Targeting />} />
+                  <Route exact path="/brokering" render={() => <Brokering />} />
+                  <Route exact path="/compare" render={() => <Compare />} />
+                </PrivateRoute>
               </Switch>
             </div>
           </div>

@@ -7,7 +7,7 @@ import Login from "../../Component/Account/Login";
 export function PrivateRoute({ children, ...rest }: RouteProps): JSX.Element {
 
     const account = useSelector((state: any) => state.account); 
-
+    console.log('account ',account);
     return ( 
         <Route
             {...rest}

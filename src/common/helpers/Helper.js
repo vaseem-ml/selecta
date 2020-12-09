@@ -1,17 +1,17 @@
-//import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import axios from 'axios';
 
 const base_url = "http://localhost:3001";
 
 var helper = {
-    /*toaster: async (message, type="error" ,) => {
+    toaster: async (message, type="error" ,) => {
         if(type==="error") {
             console.log(type);
             toast.error(message);
         } else {
             toast.success(message);
         }
-    },*/
+    },
 
     post: async (jsonObj = {}, path = "", Auth="" ) => {
         console.log('helper is listening', path);

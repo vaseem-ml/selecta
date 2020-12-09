@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Chart from "react-apexcharts";
+import BubbleChart from '../BubbleChart/BubbleChart';
+import BubbleChartEx from '../BubbleChartEx/BubbleChartEx';
 import MapChart from '../MapChart/MapChart';
 import moment from 'moment';
 import Profile from '../../uploads/facebook-davidrom524/profile_information/profile_information.json'
@@ -8,8 +10,7 @@ const General: React.FC = () => {
 
   const[dateData, setDateData] = useState<any>([{
     testDates: [],
-    testCount: [],
-
+    testCount: []
   }])
   
   const profile = Profile.profile;
@@ -24,7 +25,6 @@ const General: React.FC = () => {
     profile.groups.map((group:any) => { 
       if(data.length===0) {
         const time = moment.unix(group.timestamp).format('YY-MMM');
-
 
         data.push({date: time, count: 1})
       } else {
@@ -54,14 +54,14 @@ const General: React.FC = () => {
         chartCount.push(newCount);
       }
     }
-
+/*
     console.log('this is daate', montsWithYear);
     console.log('this is chart count', chartCount);
     setSerieas([{
       name:"desktop",
       data: chartCount
     }])
-
+*/
 
     ///chart option
     setChartOption({
@@ -132,9 +132,7 @@ const General: React.FC = () => {
     data: []
   }]);
 
-
-console.log('this is testing', dateData[0].testDates)
-
+  console.log('this is testing', dateData[0].testDates)
 
   return (
     <>
@@ -156,17 +154,12 @@ console.log('this is testing', dateData[0].testDates)
               <div className="">{profile.relationship.status}</div>
             </div>
           </div>
-          <div className="genH border">
-            {/*<Chart
-              options={chartOption.options}
-              series={series}
-              type="line"
-              width="420"
-            />{*/}
+          <div className="genH border genHH">
+            <BubbleChart />
           </div>
         </div>
         <div className="col-xl-6 col-lg-6 col-md-6 col-12 p-0 float-left">
-          <div className="genH border">
+          <div className="genH border genHH">
             {<MapChart />}
           </div>
           <div className="genH border">
